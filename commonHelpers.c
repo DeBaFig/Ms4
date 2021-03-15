@@ -95,13 +95,12 @@ double getPositiveDouble(void)
 //7. Get the argument 1 and set as a min value to a integer and argument 2 max value to a integer return the number if the input is correct, else show a error messenge
 int getIntFromRange(int lowerNumber, int highestNumber)
 {
-	int num = -1;
+	int num = getInteger();
 	while (!(num >= lowerNumber && num <= highestNumber))
 	{
-		num = getInteger();
-		if((num < lowerNumber || num > highestNumber))
 		printf("ERROR: Value must be between %d and %d inclusive: ", lowerNumber, highestNumber);
-		
+		clearStandardInputBuffer();
+		num = getInteger();
 	}
 }
 
